@@ -1,0 +1,13 @@
+*.o
+*.swp
+*.pyc
+#*#
+*~
+
+bin/
+pip-selfcheck.json
+.Python
+include/
+lib/
+
+*.pkl
