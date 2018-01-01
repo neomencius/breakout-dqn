@@ -15,7 +15,7 @@ env = gym.make('CartPole-v0')
 env.reset()
 
 # create agent
-agent = Agent(env.observation_space, env.action_space)
+agent = Agent(env, env.observation_space, env.action_space)
 
 for episode in range(5000):
     state = env.reset()
@@ -24,7 +24,7 @@ for episode in range(5000):
         if args['render']: # render it
             env.render()
 
-        action = agent.getAction(state[2])
+        action = agent.getAction(state)
         next_state, reward, done, _ = env.step(action)
         agent.observe(state, action, next_state, reward, done)
 
