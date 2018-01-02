@@ -22,7 +22,7 @@ agent = Agent(env)
 def preprocess(state):
     return np.reshape(state, [1, env.observation_space.shape[0]])
 
-for e in range(350):
+for e in range(1000):
     state = env.reset()
 
     for t in range(200):
@@ -39,4 +39,4 @@ for e in range(350):
 
     print("Episode {} finished after {} timesteps".format(e, t+1))
 
-agent.save('dqn_agent')
+agent.save('dqn_agent.h5')
